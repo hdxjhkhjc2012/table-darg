@@ -5,13 +5,13 @@
     var $_$ = {
         gettime : function(f){
             switch (f){
-                case 0:
+                case 1:
                     _time = Date.now();
                     break;
-                case 1:
+                case 2:
                     _time = _time - (1000 * 60 * 60 * 24 * 7);
                     break;
-                case 2:
+                case 3:
                     _time = _time + (1000 * 60 * 60 * 24 * 7);
                     break;
             }
@@ -20,14 +20,14 @@
         getToday: function(now){
             var dateOfToday = now;
             var dayOfToday = (new Date(now).getDay() + 7 - 1) % 7;
-            var daysOfThisWeek = [].slice.call(new Array(7)) .map(function(_, i) {
+            var daysOfThisWeek = Array.from(new Array(7)) .map(function(_, i)  {
                 var date = new Date(dateOfToday + (i - dayOfToday) * 1000 * 60 * 60 * 24);
-                return date.getFullYear() +
+            return date.getFullYear() +
                 '-' +
                 String(date.getMonth() + 1).padStart(2, '0') +
                 '-' +
                 String(date.getDate()).padStart(2, '0')
-            })
+        })
             return daysOfThisWeek;
         },
         init:function(_now){

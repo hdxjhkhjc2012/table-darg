@@ -161,7 +161,7 @@
             }
         },
         createDiv:function(value){
-            var lableDom = '<div class="table-Label"  draggable="true" ondragstart="drag(event)" style="' +
+            var lableDom = '<div class="table-Label" datedata=""  draggable="true" ondragstart="drag(event)" style="' +
                 'height: ' + parseInt(value.height) * parseInt(height_Definition) +
                 'px;background: ' + value.background +
                 ';top:' + value.top +
